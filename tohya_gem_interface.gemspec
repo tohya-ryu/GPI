@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name = 'tohya-gem-interface'
+  s.name = 'tohya_gem_interface'
   s.version = '0.0.0'
   #s.executables << 'zarchitect'
   s.date = '2020-07-29'
