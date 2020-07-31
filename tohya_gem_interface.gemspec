@@ -7,7 +7,8 @@ Gem::Specification.new do |s|
   s.description = 'lib for writing gems'
   s.authors = ["tohya ryu"]
   s.email = 'ryu@tohya.net'
-  s.files = ["lib/tohya_gem_interface.rb"]
+  s.files = ["lib/tohya_gem_interface.rb",
+             "lib/tohya_gem_interface/dir.rb"]
   s.homepage = 'https://github.com/tohya-ryu/tohya_gem_interface'
   s.license = 'MIT'
 end

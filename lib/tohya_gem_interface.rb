@@ -1,3 +1,4 @@
+require 'tohya_gem_interface/dir.rb'
 class TohyaGemInterface
 
   private
