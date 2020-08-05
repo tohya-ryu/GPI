@@ -1,29 +1,32 @@
-require 'tohya_gem_interface/dir.rb'
-require 'tohya_gem_interface/classes.rb'
+module GPI
 
-class TohyaGemInterface
-  attr_reader :parameters, :options
+module CLU # Command Line Utilities
 
   #####################
-  # @app_name
   # @command
   # @commands
   # @appcom | flag
   
-  def initialize
+  def self.init
     @appcom = false
     @commands = Array.new
     @parameters = Array.new
     @options = Array.new
   end
 
-  private
-
-  def command
+  def self.command
     @command.name
   end
 
-  def process_args
+  def self.parameters
+    @parameters
+  end
+
+  def self.options
+    @options
+  end
+
+  def self.process_args
     @command = nil
     # attempt to find command
     if @appcom
@@ -52,7 +55,7 @@ class TohyaGemInterface
             @command.options.each_char do |c|
               puts "-#{c}"
             end
-            quit
+            GPI.quit
           end
         end
       else # parameter
@@ -66,40 +69,30 @@ class TohyaGemInterface
     require_command
     unless @command.pcount.include?(@parameters.size)
       puts "Invalid number of parameters for command given"
-      quit
+      GPI.quit
     end
   end
 
-  def require_command
+  def self.require_command
     # exit when no command given
     if @command.nil?
       # no valid command, exit
       puts "Missing or Invalid Command."
       puts "Legal commands are:"
       @commands.each { |c| puts "- #{c.name}" }
-      quit
+      GPI.quit
     end
   end
 
-  def use_command(name, pcount, options) # if program has multiple commands
+  def self.use_command(name, pcount, options) # if program has multiple commands
     @commands.push(Command.new(name, pcount, options))
   end
 
-  def app_command(pcount, options) # if app only accepts parameters
-    @commands.push(Command.new(@app_name, pcount, options))
+  def self.app_command(pcount, options) # if app only accepts parameters
+    @commands.push(Command.new(GPI.app_name, pcount, options))
     @appcom = true
   end
 
-  def gem_interface_test
-    puts "gem integration successful"
-  end
+end # END OF MODULE
 
-  def quit
-    exit
-  end
-
-  def app_name(str)
-    @app_name = str 
-  end
-
-end
+end # END OF MODULE
