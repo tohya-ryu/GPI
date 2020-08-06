@@ -3,7 +3,7 @@ module GPI
   @app_name = "GPI"
 
   def self.gem_interface_test
-    puts "gem integration successful"
+    GPI.print "gem integration successful"
   end
 
   def self.quit
@@ -16,6 +16,10 @@ module GPI
 
   def self.app_name
     @app_name
+  end
+
+  def self.print(str)
+    puts "#{@app_name} > " << str
   end
 
 require 'gpi/clu.rb'

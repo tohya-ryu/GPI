@@ -26,6 +26,13 @@ module CLU # Command Line Utilities
     @options
   end
 
+  def self.check_option(str)
+    @options.each do |o|
+      return true if o.name == str
+    end
+    false
+  end
+
   def self.process_args
     @command = nil
     # attempt to find command
@@ -50,10 +57,10 @@ module CLU # Command Line Utilities
             @options.push(Option.new(c))
             z = @options.size - 1
           else
-            puts "Invalid option for command #{@command.name}"
-            puts "Legal options:"
+            GPI.print "Invalid option for command #{@command.name}"
+            GPI.print "Legal options:"
             @command.options.each_char do |c|
-              puts "-#{c}"
+              GPI.print "-#{c}"
             end
             GPI.quit
           end
@@ -68,7 +75,7 @@ module CLU # Command Line Utilities
     end
     require_command
     unless @command.pcount.include?(@parameters.size)
-      puts "Invalid number of parameters for command given"
+      GPIT.print "Invalid number of parameters for command given"
       GPI.quit
     end
   end
@@ -77,9 +84,9 @@ module CLU # Command Line Utilities
     # exit when no command given
     if @command.nil?
       # no valid command, exit
-      puts "Missing or Invalid Command."
-      puts "Legal commands are:"
-      @commands.each { |c| puts "- #{c.name}" }
+      GPI.print "Missing or Invalid Command."
+      GPI.print "Legal commands are:"
+      @commands.each { |c| GPI.print "- #{c.name}" }
       GPI.quit
     end
   end
