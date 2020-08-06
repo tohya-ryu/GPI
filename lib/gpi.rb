@@ -24,6 +24,7 @@ module GPI
 
 require 'gpi/clu.rb'
 require 'gpi/dir.rb'
+require 'gpi/file.rb'
 require 'gpi/classes.rb'
 
 end # END OF MODULE
