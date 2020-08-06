@@ -1,3 +1,5 @@
+module GPI
+
 class Dir
 
   def self.directories(dir) 
@@ -12,4 +14,6 @@ class Dir
     end
   end
 
-end
+end # END OF CLASS
+
+end # END OF MODULE
