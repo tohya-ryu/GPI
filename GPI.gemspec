@@ -10,6 +10,7 @@ Gem::Specification.new do |s|
   s.files = ["lib/gpi.rb",
              "lib/gpi/clu.rb",
              "lib/gpi/classes.rb",
+             "lib/gpi/string.rb",
              "lib/gpi/file.rb",
              "lib/gpi/dir.rb"]
   s.homepage = 'https://github.com/tohya-ryu/GPI'

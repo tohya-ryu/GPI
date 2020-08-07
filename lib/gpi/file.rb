@@ -12,4 +12,4 @@ module FileExtend
 
 end # END OF MIXIN
 
-end # END OF MODULE
+end # END OF NAMESPACE
