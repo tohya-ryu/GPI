@@ -1,19 +1,19 @@
 module GPI
 
-class Dir
+module DirExtend
 
-  def self.directories(dir) 
-    ::Dir.entries(dir).select do |f|
-      ::File.directory?(::File.join(dir,f)) && f != "." && f != ".."
+  def Dir.directories(dir) 
+    Dir.entries(dir).select do |f|
+      File.directory?(File.join(dir,f)) && f != "." && f != ".."
     end
   end
 
-  def self.files(dir)
-    ::Dir.entries(dir).select do |f|
-      !(::File.directory?(::File.join(dir,f)))
+  def Dir.files(dir)
+    Dir.entries(dir).select do |f|
+      !(File.directory?(File.join(dir,f)))
     end
   end
 
-end # END OF CLASS
+end # END OF MIXIN
 
 end # END OF MODULE

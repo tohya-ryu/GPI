@@ -22,6 +22,15 @@ module GPI
     puts "#{@app_name} > " << str
   end
 
+  def self.extend(sym)
+    case sym
+    when :dir
+      Dir.class_eval { include DirExtend }
+    when :file
+      File.class_eval { include FileExtend }
+    end
+  end
+
 require 'gpi/clu.rb'
 require 'gpi/dir.rb'
 require 'gpi/file.rb'
