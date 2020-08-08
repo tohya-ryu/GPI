@@ -8,11 +8,12 @@ Gem::Specification.new do |s|
   s.authors = ["tohya ryu"]
   s.email = 'ryu@tohya.net'
   s.files = ["lib/gpi.rb",
-             "lib/gpi/clu.rb",
              "lib/gpi/classes.rb",
-             "lib/gpi/string.rb",
+             "lib/gpi/clu.rb",
+             "lib/gpi/dir.rb",
              "lib/gpi/file.rb",
-             "lib/gpi/dir.rb"]
+             "lib/gpi/hash.rb",
+             "lib/gpi/string.rb"]
   s.homepage = 'https://github.com/tohya-ryu/GPI'
   s.license = 'MIT'
 end

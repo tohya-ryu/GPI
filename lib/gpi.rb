@@ -28,14 +28,17 @@ module GPI
       Dir.class_eval { include DirExtend }
     when :file
       File.class_eval { include FileExtend }
+    when :hash
+      File.class_eval { include HashExtend }
     when :string
       String.class_eval { include StringExtend }
     end
   end
 
+require 'gpi/classes.rb'
 require 'gpi/clu.rb'
 require 'gpi/dir.rb'
 require 'gpi/file.rb'
-require 'gpi/classes.rb'
+require 'gpi/hash.rb'
 
 end # END OF MODULE
