@@ -29,7 +29,7 @@ module GPI
     when :file
       File.class_eval { include FileExtend }
     when :hash
-      File.class_eval { include HashExtend }
+      Hash.class_eval { include HashExtend }
     when :string
       String.class_eval { include StringExtend }
     end
