@@ -7,7 +7,6 @@ module HashExtend
     h = self
     m = eval("::#{name.capitalize} = Module.new")
     m.class_eval {
-      p Module.nesting
       instance_variable_set(:@hash, h)
       h.each_key do |k|
         define_singleton_method k do
