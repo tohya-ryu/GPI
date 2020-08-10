@@ -40,5 +40,6 @@ require 'gpi/clu.rb'
 require 'gpi/dir.rb'
 require 'gpi/file.rb'
 require 'gpi/hash.rb'
+require 'gpi/string.rb'
 
 end # END OF MODULE
