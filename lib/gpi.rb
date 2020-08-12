@@ -20,11 +20,11 @@ module GPI
 
   def self.print(str, o = nil)
     if o.nil?
-      if GPI::CLU.check_option(o)
+      puts "#{@app_name} > " << str
+    else
+      if o
         puts "#{@app_name} > " << str
       end
-    else
-      puts "#{@app_name} > " << str
     end
   end
 
