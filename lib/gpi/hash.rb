@@ -3,7 +3,6 @@ module GPI
 module HashExtend
 
   def to_module(name)
-    p name.capitalize
     h = self
     m = eval("::#{name.capitalize} = Module.new")
     m.class_eval {
