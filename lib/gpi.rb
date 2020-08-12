@@ -18,8 +18,14 @@ module GPI
     @app_name
   end
 
-  def self.print(str)
-    puts "#{@app_name} > " << str
+  def self.print(str, o = nil)
+    if o.nil?
+      if GPI::CLU.check_option(o)
+        puts "#{@app_name} > " << str
+      end
+    else
+      puts "#{@app_name} > " << str
+    end
   end
 
   def self.extend(sym)
