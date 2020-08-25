@@ -37,7 +37,7 @@ module GPI
     when :hash
       Hash.class_eval { include HashExtend }
     when :numeric
-      Hash.class_eval { include NumericExtend }
+      Numeric.class_eval { include NumericExtend }
     when :string
       String.class_eval { include StringExtend }
     end
