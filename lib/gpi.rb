@@ -36,6 +36,8 @@ module GPI
       File.class_eval { include FileExtend }
     when :hash
       Hash.class_eval { include HashExtend }
+    when :numeric
+      Hash.class_eval { include NumericExtend }
     when :string
       String.class_eval { include StringExtend }
     end
@@ -46,6 +48,7 @@ require 'gpi/clu.rb'
 require 'gpi/dir.rb'
 require 'gpi/file.rb'
 require 'gpi/hash.rb'
+require 'gpi/numeric.rb'
 require 'gpi/string.rb'
 
 end # END OF MODULE
