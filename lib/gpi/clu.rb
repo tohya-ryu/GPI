@@ -75,7 +75,7 @@ module CLU # Command Line Utilities
     end
     require_command
     unless @command.pcount.include?(@parameters.size)
-      GPIT.print "Invalid number of parameters for command given"
+      GPI.print "Invalid number of parameters for command given"
       GPI.quit
     end
   end
