@@ -7,6 +7,7 @@ module GPI
   end
 
   def self.quit
+    GPI.print "aborting #{@app_name}"
     exit
   end
 
